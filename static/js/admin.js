@@ -9,7 +9,11 @@ jQuery(document).ready(function($) {
             data:{'username': username, 'password': password, '_xsrf': _xsrf},
             dataType:'json',
             success:function(data){
-                alert(data);
+                if(data.status == 'fail'){
+                    alert(data.err_msg);
+                }else{
+                    window.location.reload();
+                }
             }
         });
     });

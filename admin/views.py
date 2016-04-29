@@ -1,4 +1,5 @@
 # -*- coding: utf-8 -*-
+import json
 from base import BaseHandler
 from common.log import getLogger
 from common.utils import md5
@@ -22,9 +23,9 @@ class LoginHandler(BaseHandler):
         user = dao.get_user_by_username(username)
         if user and user.password == md5(password):
             self.set_cookie('username', username)
-            self.redirect('/blog/list/')
+            self.write(json.dumps({'status': 'success'}))
         else:
-            self.write({'status': 'fail', 'err_msg': u'用户名和密码不匹配'})
+            self.write(json.dumps({'status': 'fail', 'err_msg': u'用户名和密码不匹配'}))
 
 
 class RegisterHandler(BaseHandler):
