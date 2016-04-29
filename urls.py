@@ -1,7 +1,11 @@
 # -*- coding: utf-8 -*-
-from blog import views
-
+import index
+import blog.urlpatterns
+import admin.urlpatterns
 
 urlpatterns = (
-    (r"/?", views.BlogHandler),
+    (r"/?", index.IndexHandler),
 )
+
+
+urlpatterns += blog.urlpatterns + admin.urlpatterns
