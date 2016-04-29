@@ -1,0 +1,18 @@
+{% extends "base.html" %}
+{% block header %}
+<title>登录</title>
+<script src="{{ static_url("js/jquery.js") }}"></script>
+<script src="{{ static_url("js/tools.js") }}"></script>
+<script src="{{ static_url("js/admin.js") }}"></script>
+{% end %}
+
+{% block content %}
+    <div>
+        <form>
+            <div>username: <input type="text" id="username" name="username" /></div>
+            <div>password: <input type="text" id="password" name="password" /></div>
+            <div><input type="button" id="btn_submit" value='submit' /></div>
+            {% module xsrf_form_html() %}
+        </form>
+    </div>
+{% end %}

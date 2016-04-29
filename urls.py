@@ -1,11 +1,13 @@
 # -*- coding: utf-8 -*-
 import index
-import blog.urlpatterns
-import admin.urlpatterns
+import blog.urls
+import admin.urls
 
-urlpatterns = (
+urlpatterns = [
     (r"/?", index.IndexHandler),
-)
+]
 
 
-urlpatterns += blog.urlpatterns + admin.urlpatterns
+urlpatterns += blog.urls.urlpatterns + admin.urls.urlpatterns
+
+print urlpatterns

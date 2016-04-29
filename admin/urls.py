@@ -3,6 +3,6 @@ from admin import views
 
 
 urlpatterns = [
-    (r"/register/?", views.LoginHandler),
-    (r"/login/?", views.RegisterHandler),
+    (r"/register/?", views.RegisterHandler),
+    (r"/login/?", views.LoginHandler),
 ]

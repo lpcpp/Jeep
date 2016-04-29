@@ -18,7 +18,7 @@ class LoginHandler(BaseHandler):
     def post(self):
         log.debug('Login post')
         username = self.get_argument('username')
-        password = self.get_arguemnt('password')
+        password = self.get_argument('password')
         user = dao.get_user_by_username(username)
         if user and user.password == md5(password):
             self.set_cookie('username', username)
@@ -27,6 +27,14 @@ class LoginHandler(BaseHandler):
             self.write({'status': 'fail', 'err_msg': u'用户名和密码不匹配'})
 
 
-def RegisterHandler(BaseHandler):
+class RegisterHandler(BaseHandler):
     def get(self):
-        dao.create_user('luopeng', '123456')
+        log.debug('register')
+        username = 'luopeng'
+        password = '123456'
+        if not dao.get_user_by_username(username):
+            dao.create_user(username, password)
+            self.write('success')
+            return
+
+        self.write(u'用户已存在')
