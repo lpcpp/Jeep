@@ -9,3 +9,13 @@ class User(models.Document):
     password = models.StringField()
     mobile = models.StringField()
     email = models.EmailField()
+
+    @property
+    def oid(self):
+        if hasattr(self, 'id'):
+            return str(self.id)
+        return ''
+
+    meta = {
+        'indexes': ['username']
+    }

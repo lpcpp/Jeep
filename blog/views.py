@@ -1,3 +1,4 @@
+import json
 from base import BaseHandler
 from common.log import getLogger
 from common.utils import owner_authenticated
@@ -22,8 +23,8 @@ class AddBlogHandler(BaseHandler):
         user = self.get_current_user()
         title = self.get_argument('title', '')
         content = self.get_argument('content', '')
-        dao.add_blog(user['id'], title, content)
-        self.write({'status': 'success'})
+        dao.add_blog(user.oid, title, content)
+        self.write(json.dumps({'status': 'success'}))
 
 
 class UpdateBlogHandler(BaseHandler):
