@@ -7,4 +7,4 @@ log = getLogger('blog/views')
 class BlogHandler(BaseHandler):
     def get(self):
         log.debug('test')
-        self.write('blog list')
+        self.render('blog.html')
