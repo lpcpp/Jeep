@@ -1,5 +1,6 @@
 # -*- coding: utf-8 -*-
 import os
+import logging
 
 DEBUG = True
 
@@ -21,3 +22,6 @@ settings = dict(
     debug=DEBUG,
     xheaders=True,
 )
+
+
+LOG_LEVEL = logging.DEBUG if DEBUG else logging.INFO
