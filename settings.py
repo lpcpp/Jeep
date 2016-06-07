@@ -4,8 +4,13 @@ import logging
 
 DEBUG = True
 
+<<<<<<< HEAD
 DB_ADDRESS = '127.0.0.1'
 DB_NAME = 'office'
+=======
+DB_HOST = '115.28.15.67'
+DB_NAME = 'blog'
+>>>>>>> d8c7f8f8b87241e8511d07f10af33957316f1857
 DB_PORT = 27017
 
 PORT = '8000'

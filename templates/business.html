@@ -1,7 +1,17 @@
 <html>
     <head>
+        <title> 博客列表 </title>
 	</head>
 	<body>
-	    blog list
+        {% if len(blog_list) %}
+            {% for blog in blog_list %}
+                <div> {{ blog.title }}</div>
+                <div> {{ blog.content }}</div>
+                <div> {{ blog.create_time }}</div>
+                <hr>
+            {% end %}
+        {% else %}
+            暂时没有博客
+        {% end %}
 	</body>
 </html>

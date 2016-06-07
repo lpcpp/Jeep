@@ -1,0 +1,18 @@
+{% extends "base.html" %}
+{% block header %}
+<title>新建博客</title>
+<script src="{{ static_url("js/jquery.js") }}"></script>
+<script src="{{ static_url("js/blog.js") }}"></script>
+<script src="{{ static_url("js/tools.js") }}"></script>
+{% end %}
+
+{% block content %}
+    <div>
+        <form>
+            <div>title: <input type="text" id="title" name="title" /></div>
+            <div>content: <input type="text" id="content" name="content" /></div>
+            <div><input type="button" id="btn_submit" value='submit' /></div>
+            {% module xsrf_form_html() %}
+        </form>
+    </div>
+{% end %}
