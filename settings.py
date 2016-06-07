@@ -5,8 +5,8 @@ import logging
 DEBUG = True
 
 DB_ADDRESS = '127.0.0.1'
-DB_NAME = 'db'
-DB_PORT = 'port'
+DB_NAME = 'office'
+DB_PORT = 27017
 
 PORT = '8000'
 SECRET_KEY = 'xw886xItZp007qK9nyutCgGSEaojaGsrrZF8NzWL'
